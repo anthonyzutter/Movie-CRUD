@@ -10,10 +10,16 @@ public class Movie implements Serializable {
     @Column(nullable = false, updatable = false)
     private Long id;
     private String name;
+    @Column(columnDefinition = "TEXT")
     private String overview;
     private String genres;
     private Integer year;
-    @Lob
+//    @Lob
+    @Column(
+            unique = true,
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
     private String imageURL;
 
     public Movie() { }
