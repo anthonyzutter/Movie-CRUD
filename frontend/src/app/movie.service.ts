@@ -6,6 +6,9 @@ import { environment } from 'src/environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class MovieService {
+
+  // baseUrl: String = environment.baseUrl
+
   private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient){}
@@ -22,7 +25,12 @@ export class MovieService {
     return this.http.put<Movie>(`${this.apiServerUrl}/movie/update`, movie);
   }
 
-  public deleteMovie(movieId: number): Observable<void> {
+  public deleteMovie(movieId: String): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/movie/delete/${movieId}`);
+  }
+
+  findMovieById(id: String):Observable<Movie>{
+    const url = `${this.apiServerUrl}/movie/find/${id}`
+    return this.http.get<Movie>(url)
   }
 }

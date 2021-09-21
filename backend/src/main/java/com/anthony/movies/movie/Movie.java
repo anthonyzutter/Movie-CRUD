@@ -21,16 +21,18 @@ public class Movie implements Serializable {
             columnDefinition = "TEXT"
     )
     private String imageURL;
+    private String trailerURL;
 
     public Movie() { }
 
-    public Movie(Long id, String name, String overview, String genres, Integer year, String imageURL) {
+    public Movie(Long id, String name, String overview, String genres, Integer year, String imageURL, String trailerURL) {
         this.id = id;
         this.name = name;
         this.overview = overview;
         this.genres = genres;
         this.year = year;
         this.imageURL = imageURL;
+        this.trailerURL = trailerURL;
     }
 
     public Long getId() {
@@ -80,6 +82,14 @@ public class Movie implements Serializable {
         this.imageURL = imageURL;
     }
 
+    public String getTrailerURL() {
+        return trailerURL;
+    }
+
+    public void setTrailerURL(String trailerURL) {
+        this.trailerURL = trailerURL;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
@@ -89,6 +99,10 @@ public class Movie implements Serializable {
                 ", genres='" + genres + '\'' +
                 ", year=" + year +
                 ", imageURL='" + imageURL + '\'' +
+                ", trailerURL='" + trailerURL + '\'' +
                 '}';
     }
+
+
+
 }
