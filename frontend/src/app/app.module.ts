@@ -9,13 +9,15 @@ import { AboutComponent } from './about/about.component';
 import { MovieService } from './movie.service';
 import { HttpClientModule } from '@angular/common/http'; 
 import { FormsModule } from '@angular/forms';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
     AboutComponent,
-    MovieListComponent
+    MovieListComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
