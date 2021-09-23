@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from "../movie";
-import { MovieService } from "../movie.service";
+import { Movie } from "../../movie";
+import { MovieService } from "../../service/movie.service";
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
+
 @Component({
-  selector: 'app-title',
-  templateUrl: './title.component.html',
-  styleUrls: ['./title.component.css']
+  selector: 'app-app-movie-details',
+  templateUrl: './movie-details.component.html',
+  styleUrls: ['./movie-details.component.css']
 })
-export class TitleComponent implements OnInit {
+export class MovieDetailsComponent implements OnInit {
 
   movie: Movie = {
     id: "",
@@ -24,7 +25,7 @@ export class TitleComponent implements OnInit {
   constructor(
     private service: MovieService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
